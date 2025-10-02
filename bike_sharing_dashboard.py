@@ -4,11 +4,10 @@ import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
 
-# Set page configuration
 st.set_page_config(
     page_title="Bike Sharing Market Research",
     layout="wide",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="collapsed"
 )
 
 # Custom CSS for styling
