@@ -193,8 +193,8 @@ st.markdown('<h2 class="section-header">Time Series Analysis</h2>', unsafe_allow
 tab1, tab2, tab3, tab4 = st.tabs(["Moving Average", "User Segments", "Area Chart", "Total Rentals"])
 
 with tab1:
-    moving_avg_total = filtered_data[total].rolling(window=10).mean()
-    moving_avg_total.name = 'moving_avg_total'
+    moving_avg_total = 'moving_avg_total'
+    filtered_data[moving_avg_total] = filtered_data[total].rolling(window=10).mean()
 
     fig = px.line(
         filtered_data,
@@ -202,12 +202,13 @@ with tab1:
         y=[total, moving_avg_total],
         title="Total Bike Rentals Over Time (Moving Average)",
         height=450,
-        color_discrete_map={total: '#1f77b4', 'moving_avg_total': '#ff7f0e'}
+        color_discrete_map={total: '#1f77b4', moving_avg_total: '#ff7f0e'}
     )
     fig.update_layout(
         xaxis_title="Date",
         yaxis_title="Total Rentals",
     )
+
     st.plotly_chart(fig, use_container_width=True)
     st.markdown('<div class="insight">The seasonality pattern holds for both 2011 and 2012. The number of rentals are low during the winter months December to early March.</div>', unsafe_allow_html=True)
 
