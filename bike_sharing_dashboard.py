@@ -166,6 +166,8 @@ if season_filter:
 if weather_filter:
     filtered_data = filtered_data[filtered_data[weather_situation].isin(weather_filter)]
 
+st.info("ℹ️ Tip: Close the sidebar (top-left arrow) for a better chart view.")
+
 # Key metrics
 st.markdown("## Key Metrics")
 col1, col2, col3, col4 = st.columns(4)
